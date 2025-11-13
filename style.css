@@ -410,8 +410,9 @@ section {
   justify-content: center;
   align-items: center;
   gap: 40px;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
   padding: 40px 0;
+  width: 100%;
 }
 
 .product {
@@ -751,8 +752,8 @@ textarea {
 .footer-container {
   display: flex;
   justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 40px;
+  /* flex-wrap: wrap;
+  gap: 40px; */
   padding-bottom: 25px;
 }
 
@@ -826,7 +827,7 @@ textarea {
 
 .contact-details {
   display: flex;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
   gap: 30px;
 }
 
