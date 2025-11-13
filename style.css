@@ -1529,6 +1529,7 @@ textarea {
 
   label {
     margin: 0 auto;
+    margin-bottom: 5px;
   }
 
   .checkbox .checkbox-label {
