@@ -1322,7 +1322,7 @@ textarea {
 
 
   .hero {
-    min-height: 60vh; /* even less height */
+    min-height: 70vh; /* even less height */
     padding: 40px 20px; /* add breathing space */
   }
 
