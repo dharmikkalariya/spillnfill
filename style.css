@@ -1793,7 +1793,7 @@ textarea {
 
 @media (max-width: 600px) {
   .bottle {
-    width: 280px; /* Smaller for mobile */
+    width: 250px; /* Smaller for mobile */
     left: 50%;
     bottom: 80px;
   }
