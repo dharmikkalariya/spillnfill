@@ -84,42 +84,12 @@ ScrollTrigger.create({
 });
 
 // BENEFITS TO PRODUCTS - Bottle shrinks and settles above cards
-
-// ScrollTrigger.create({
-//   trigger: "#products",
-//   start: "top center",
-//   end: "bottom center",
-//   scrub: 1,
-//   onEnter: () => {
-//     gsap.to(".bottle", {
-//       scale: 0.6,
-//       y: -120,
-//       x: 0,
-//       rotate: 0,
-//       duration: 1.3,
-//       ease: "power3.out",
-//       onComplete: () => {
-//         console.log("Bottle settled at Products section");
-//       },
-//     });
-//   },
-//   onLeaveBack: () => {
-//     gsap.to(".bottle", {
-//       scale: 1.5,
-//       y: -400,
-//       x: 0,
-//       rotate: 0,
-//       duration: 1.2,
-//       ease: "power3.out",
-//     });
-//   },
-// });
-
-// BENEFITS TO PRODUCTS - Bottle shrinks and settles above cards
 ScrollTrigger.create({
   trigger: "#products",
   start: "top center",
-  end: "top center", // <--- CHANGED: Finishes halfway through the section instead of at the bottom
+  // "center center" gives the animation space to play. 
+  // If you use "top center", it snaps instantly.
+  end: "center center", 
   scrub: 1,
   onEnter: () => {
     gsap.to(".bottle", {
@@ -142,7 +112,7 @@ ScrollTrigger.create({
       rotate: 0,
       duration: 1.2,
       ease: "power3.out",
-      opacity: 1, // reset opacity if coming back up
+      opacity: 1, 
     });
   },
 });
@@ -150,8 +120,27 @@ ScrollTrigger.create({
 // 🧊 Extra trigger for hiding the bottle
 ScrollTrigger.create({
   trigger: "#product-section",
-  start: "bottom bottom-=200", // <--- CHANGED: Starts fading out 200px BEFORE the bottom
-  // ... rest of code
+  // "bottom bottom-=200" means: Start fading when the bottom of the section
+  // is 200px ABOVE the bottom of the screen.
+  start: "bottom bottom-=200", 
+  end: "bottom top", // Standard end point
+  onEnter: () => {
+    gsap.to(".bottle", {
+      opacity: 0,
+      y: 100, 
+      duration: 0.8,
+      ease: "power2.out",
+    });
+  },
+  onLeaveBack: () => {
+    gsap.to(".bottle", {
+      opacity: 1,
+      y: -120, 
+      duration: 0.8,
+      ease: "power2.out",
+    });
+  },
+});
 
 
 // Navigation functionality (unchanged)
