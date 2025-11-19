@@ -119,7 +119,7 @@ ScrollTrigger.create({
 ScrollTrigger.create({
   trigger: "#products",
   start: "top center",
-  end: "center center", // <--- CHANGED: Finishes halfway through the section instead of at the bottom
+  end: "top center", // <--- CHANGED: Finishes halfway through the section instead of at the bottom
   scrub: 1,
   onEnter: () => {
     gsap.to(".bottle", {
@@ -147,6 +147,11 @@ ScrollTrigger.create({
   },
 });
 
+// 🧊 Extra trigger for hiding the bottle
+ScrollTrigger.create({
+  trigger: "#product-section",
+  start: "bottom bottom-=200", // <--- CHANGED: Starts fading out 200px BEFORE the bottom
+  // ... rest of code
 
 
 // Navigation functionality (unchanged)
