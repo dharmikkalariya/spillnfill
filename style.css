@@ -18,7 +18,7 @@ body {
 
 section {
   width: 100%;
-  max-width: 1522px;
+  /* max-width: 1522px; */
   margin: 0 auto;
   position: relative;
   padding: 60px 40px;
@@ -637,7 +637,7 @@ section {
 .container {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
   gap: 60px;
   max-width: 90%;
   width: 100%;
