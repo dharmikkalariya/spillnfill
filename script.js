@@ -169,10 +169,11 @@ ScrollTrigger.create({
 });
 
 // PRODUCTS TO SUSTAINABILITY - Bottle fades out and settles hidden
+// PRODUCTS TO SUSTAINABILITY - Bottle fades out and settles hidden
 ScrollTrigger.create({
-  trigger: "#sustainability", // 👈 updated trigger
-  start: "top center",
-  end: "bottom center",
+  trigger: "#sustainability", 
+  start: "top center",  // Animation starts when section hits middle of screen
+  end: "top top",       // <--- CHANGED: Animation finishes when section hits top of screen
   scrub: 1,
   onEnter: () => {
     gsap.to(".bottle", {
