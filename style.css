@@ -722,7 +722,7 @@ textarea {
 }
 
 .image-box img {
-  width: 100%;
+  width: 70%;
   max-width: 500px;
   border-radius: 20px;
   object-fit: cover;
@@ -740,7 +740,7 @@ textarea {
   font-family: "Poppins", sans-serif;
   padding: 40px 60px 20px;
   width: 100%;
-  max-width: 1522px;
+  /* max-width: 1522px; */
   margin: 0 auto;
 }
 
@@ -904,6 +904,98 @@ textarea {
   text-decoration: none;
   font: inherit;
   transition: color 0.3s ease;
+}
+
+/* ---------------------=================================
+======================Footer links====================
+========================== */
+
+/* --- Modal (Pop-up) Styling --- */
+/* The Modal Background */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fff;
+  margin: 5% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 90%;
+  max-width: 700px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  position: relative;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Modal Header Styling */
+.modal-header {
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+}
+
+.modal-header h2 {
+  margin: 0;
+  font-size: 24px;
+  color: #333;
+}
+
+/* Modal Body Styling (for the actual content) */
+.modal-body p,
+.modal-body ul,
+.modal-body ol {
+  line-height: 1.6;
+  color: #555;
+}
+
+.modal-body h3 {
+  color: #333;
+  margin-top: 15px;
+  border-bottom: 1px dotted #ccc;
+  padding-bottom: 5px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .modal-content {
+    width: 95%;
+    margin: 10% auto;
+  }
+  .footer-links a {
+    display: block;
+    margin: 10px 0;
+  }
 }
 
 /* ==========================
@@ -1162,7 +1254,18 @@ textarea {
   .footer-left,
   .footer-center,
   .footer-right {
-    width: 48%; /* 2 per row if possible */
+    width: 100%; /* 2 per row if possible */
+  }
+
+  .footer-left {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    justify-content: space-between;
+  }
+
+  .footer-line-left {
+    display: none;
   }
 
   .footer-center {
@@ -1170,7 +1273,7 @@ textarea {
   }
 
   .contact-details {
-    flex-direction: column;
+    flex-direction: row;
   }
 
   .footer-line-right {
@@ -1179,7 +1282,7 @@ textarea {
 
   .footer-bottom {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     gap: 10px;
   }
 
@@ -1489,6 +1592,10 @@ textarea {
     width: 100%; /* full width */
   }
 
+  .footer-line-left {
+    display: block;
+  }
+
   .footer-left {
     flex-direction: row;
     flex-wrap: wrap;
@@ -1497,7 +1604,7 @@ textarea {
   }
 
   .footer-left img {
-    width: auto;
+    width: 100%;
     max-width: -webkit-fill-available; /* smaller logos on mobile */
   }
 
@@ -1659,7 +1766,7 @@ textarea {
 
 @media (max-width: 900px) {
   .bottle {
-    width: 350px; /* Adjusted for mobile */
+    width: 450px; /* Adjusted for mobile */
     left: 50%;
   }
 
