@@ -169,31 +169,31 @@ ScrollTrigger.create({
 });
 
 // PRODUCTS TO SUSTAINABILITY - Bottle fades out and settles hidden
-//ScrollTrigger.create({
-//  trigger: "#sustainability", 
-//  start: "top center",  // Animation starts when section hits middle of screen
-//  end: "top top",       // <--- CHANGED: Animation finishes when section hits top of screen
-//  scrub: 1,
-//  onEnter: () => {
-//    gsap.to(".bottle", {
-//      opacity: 0,
-//      scale: 0.3,
-//      duration: 1,
-//      ease: "power3.out",
-//      onComplete: () => {
-//        console.log("Bottle settled hidden at Sustainability");
-//      },
-//    });
-//  },
-//  onLeaveBack: () => {
-//    gsap.to(".bottle", {
-//      opacity: 1,
-//      scale: 0.6,
-//      y: -120,
-//      duration: 1,
-//      ease: "power3.out",
-//    });
-//  },
+ScrollTrigger.create({
+trigger: "#sustainability", 
+start: "top center",  // Animation starts when section hits middle of screen
+end: "top top",       // <--- CHANGED: Animation finishes when section hits top of screen
+scrub: 1,
+onEnter: () => {
+gsap.to(".bottle", {
+opacity: 0,
+scale: 0.3,
+duration: 1,
+ease: "power3.out",
+onComplete: () => {
+       console.log("Bottle settled hidden at Sustainability");
+     },
+   });
+ },
+  onLeaveBack: () => {
+   gsap.to(".bottle", {
+     opacity: 1,
+      scale: 0.6,
+      y: -120,
+     duration: 1,
+      ease: "power3.out",
+    });
+  },
 });
 
 // Navigation functionality (unchanged)
