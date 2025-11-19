@@ -87,7 +87,7 @@ ScrollTrigger.create({
 ScrollTrigger.create({
   trigger: "#products",
   start: "top center",
-  end: "+=200",
+  end: "+=100",
   scrub: 1,
   onEnter: () => {
     gsap.to(".bottle", {
