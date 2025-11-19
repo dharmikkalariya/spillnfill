@@ -87,9 +87,7 @@ ScrollTrigger.create({
 ScrollTrigger.create({
   trigger: "#products",
   start: "top center",
-  // "center center" gives the animation space to play. 
-  // If you use "top center", it snaps instantly.
-  end: "center center", 
+  end: "+=200",
   scrub: 1,
   onEnter: () => {
     gsap.to(".bottle", {
