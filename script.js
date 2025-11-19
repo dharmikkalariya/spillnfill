@@ -115,10 +115,11 @@ ScrollTrigger.create({
 //   },
 // });
 
+// BENEFITS TO PRODUCTS - Bottle shrinks and settles above cards
 ScrollTrigger.create({
   trigger: "#products",
   start: "top center",
-  end: "bottom center",
+  end: "center center", // <--- CHANGED: Finishes halfway through the section instead of at the bottom
   scrub: 1,
   onEnter: () => {
     gsap.to(".bottle", {
@@ -142,28 +143,6 @@ ScrollTrigger.create({
       duration: 1.2,
       ease: "power3.out",
       opacity: 1, // reset opacity if coming back up
-    });
-  },
-});
-
-// 🧊 Extra trigger for hiding the bottle at the end of #product-section
-ScrollTrigger.create({
-  trigger: "#product-section",
-  start: "bottom bottom", // when the end of inner section touches bottom of viewport
-  onEnter: () => {
-    gsap.to(".bottle", {
-      opacity: 0,
-      y: 100, // optional: move down while fading
-      duration: 0.8,
-      ease: "power2.out",
-    });
-  },
-  onLeaveBack: () => {
-    gsap.to(".bottle", {
-      opacity: 1,
-      y: -120, // reset position
-      duration: 0.8,
-      ease: "power2.out",
     });
   },
 });
