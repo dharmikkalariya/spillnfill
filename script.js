@@ -117,30 +117,6 @@ ScrollTrigger.create({
   },
 });
 
-// 🧊 Extra trigger for hiding the bottle
-ScrollTrigger.create({
-  trigger: "#product-section",
-  // "bottom bottom-=200" means: Start fading when the bottom of the section
-  // is 200px ABOVE the bottom of the screen.
-  start: "bottom bottom-=200", 
-  end: "bottom top", // Standard end point
-  onEnter: () => {
-    gsap.to(".bottle", {
-      opacity: 0,
-      y: 100, 
-      duration: 0.8,
-      ease: "power2.out",
-    });
-  },
-  onLeaveBack: () => {
-    gsap.to(".bottle", {
-      opacity: 1,
-      y: -120, 
-      duration: 0.8,
-      ease: "power2.out",
-    });
-  },
-});
 
 
 // Navigation functionality (unchanged)
