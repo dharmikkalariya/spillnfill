@@ -32,11 +32,17 @@ mm.add("(min-width: 800px)", () => {
     scrub: 1,
     onEnter: () => {
       gsap.to(".bottle", {
+<<<<<<< HEAD
         rotate: 0,
         scale: 0.8,
         y: -60,
         x: 0,
         duration: 1.2,
+=======
+        scale: 1.5, // mobile ma thodu ochu
+        y: -400, // mobile screen mate fit
+        duration: 1,
+>>>>>>> ee36833 (Bottle scroll changes)
         ease: "power3.out",
       });
     },
