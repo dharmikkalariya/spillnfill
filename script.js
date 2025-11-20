@@ -52,11 +52,10 @@ ScrollTrigger.create({
   },
 });
 
-// DESKTOP — (1025px+)----------------------
 // =======================
-// ============================benefits=====
+// ============================benefits=========================
+// =======================
 // ABOUT TO BENEFITS - Bottle scales up and settles higher
-
 ScrollTrigger.create({
   trigger: "#benefits",
   start: "top-=200 center",
@@ -84,6 +83,7 @@ ScrollTrigger.create({
   },
 });
 
+// =====================
 // 🎯 Extra trigger ONLY for shrinking when bottle reaches center
 ScrollTrigger.create({
   trigger: "#benefits",
@@ -108,6 +108,7 @@ ScrollTrigger.create({
 
 // =======================
 // ============================products=========================
+// =======================
 // BENEFITS TO PRODUCTS - Bottle shrinks and settles above cards
 ScrollTrigger.create({
   trigger: "#products",
@@ -142,7 +143,7 @@ ScrollTrigger.create({
 
 // 🧊 Extra trigger for hiding the bottle
 ScrollTrigger.create({
-  trigger: "#bottle-hide",
+  trigger: "#product-section",
   // "bottom bottom-=200" means: Start fading when the bottom of the section
   // is 200px ABOVE the bottom of the screen.
   start: "bottom bottom",
@@ -165,185 +166,12 @@ ScrollTrigger.create({
   },
 });
 
-// TABLET VIEW (768px – 1024px)------------------
-// ==============================
-// ========================= TABLET LOGIC =========================
-if (window.innerWidth >= 768 && window.innerWidth <= 1024) {
-  // 1️⃣ ABOUT → BENEFITS (Bottle grows)
-  ScrollTrigger.create({
-    trigger: "#benefits",
-    start: "top center",
-    end: "top+=50 center", // VERY CLEAN → FULLY inside section
-    scrub: 1,
-    onEnter: () => {
-      gsap.to(".bottle", {
-        scale: 1.3,
-        y: -300,
-        duration: 1,
-        ease: "power3.out",
-      });
-    },
-    onLeaveBack: () => {
-      gsap.to(".bottle", {
-        scale: 0.75,
-        y: -40,
-        duration: 1,
-        ease: "power3.out",
-      });
-    },
-  });
-
-  // 2️⃣ BENEFITS CENTER → bottle small
-  ScrollTrigger.create({
-    trigger: "#benefits",
-    start: "center center",
-    end: "center+=1 center", // EXACT point → NOT overlapping
-    onEnter: () => {
-      gsap.to(".bottle", {
-        scale: 0.75,
-        y: -40,
-        duration: 0.8,
-        ease: "power3.out",
-      });
-    },
-    onLeaveBack: () => {
-      gsap.to(".bottle", {
-        scale: 1.3,
-        y: -300,
-        duration: 0.8,
-        ease: "power3.out",
-      });
-    },
-  });
-
-  // 3️⃣ PRODUCTS — Bottle small & stays visible whole section
-  ScrollTrigger.create({
-    trigger: "#products",
-    start: "top+=0 center",
-    end: "bottom center", // 👈 BIG IMPORTANT FIX — FULL SECTION SCROLL
-    scrub: 1,
-    onEnter: () => {
-      gsap.to(".bottle", {
-        scale: 0.55,
-        y: -80,
-        duration: 1,
-        ease: "power3.out",
-      });
-    },
-    onLeaveBack: () => {
-      gsap.to(".bottle", {
-        scale: 0.75,
-        y: -40,
-        duration: 1,
-        ease: "power3.out",
-      });
-    },
-  });
-
-  // 4️⃣ HIDE — ONLY when hide section properly arrives
-  ScrollTrigger.create({
-    trigger: "#bottle-hide",
-    start: "top+=100 center", // 👈 NOW WILL NOT FIRE EARLY
-    end: "bottom center",
-    scrub: false,
-    onEnter: () => {
-      gsap.to(".bottle", {
-        opacity: 0,
-        y: 120,
-        duration: 0.8,
-        ease: "power2.out",
-      });
-    },
-    onLeaveBack: () => {
-      gsap.to(".bottle", {
-        opacity: 1,
-        y: -80,
-        duration: 0.8,
-        ease: "power2.out",
-      });
-    },
-  });
-}
-
-// ========================= MOBILE LOGIC =========================
+// MOBILE HIDE — ONLY WHEN #bottle-hide ARRIVES
 if (window.innerWidth <= 767) {
-  // 1️⃣ ABOUT → BENEFITS (Bottle grows)
-  ScrollTrigger.create({
-    trigger: "#benefits",
-    start: "top center",
-    end: "top+=120 center", // smaller scroll because mobile height kam
-    scrub: 1,
-    onEnter: () => {
-      gsap.to(".bottle", {
-        scale: 1.5, // mobile ma thodu ochu
-        y: -400, // mobile screen mate fit
-        duration: 1,
-        ease: "power3.out",
-      });
-    },
-    onLeaveBack: () => {
-      gsap.to(".bottle", {
-        scale: 0.65,
-        y: -20,
-        duration: 1,
-        ease: "power3.out",
-      });
-    },
-  });
-
-  // 2️⃣ BENEFITS CENTER → Bottle small
-  ScrollTrigger.create({
-    trigger: "#benefits",
-    start: "center center",
-    end: "center+=1 center",
-    onEnter: () => {
-      gsap.to(".bottle", {
-        scale: 0.65,
-        y: -20,
-        duration: 0.7,
-        ease: "power3.out",
-      });
-    },
-    onLeaveBack: () => {
-      gsap.to(".bottle", {
-        scale: 1.15,
-        y: -220,
-        duration: 0.7,
-        ease: "power3.out",
-      });
-    },
-  });
-
-  // 3️⃣ PRODUCTS — Bottle stays visible whole section
-  ScrollTrigger.create({
-    trigger: "#products",
-    start: "top center",
-    end: "bottom center", // FULL SCROLL on mobile
-    scrub: 1,
-    onEnter: () => {
-      gsap.to(".bottle", {
-        scale: 0.55,
-        y: -50,
-        duration: 1,
-        ease: "power3.out",
-      });
-    },
-    onLeaveBack: () => {
-      gsap.to(".bottle", {
-        scale: 0.65,
-        y: -20,
-        duration: 1,
-        ease: "power3.out",
-      });
-    },
-  });
-
-  // 4️⃣ HIDE — Only when hide section fully appears
   ScrollTrigger.create({
     trigger: "#bottle-hide",
-    start: "top+=200 center", // MOBILE FIX — NO EARLY HIDE
+    start: "top center", // Hide starts ONLY when hide section arrives
     end: "bottom center",
-    scrub: false,
     onEnter: () => {
       gsap.to(".bottle", {
         opacity: 0,
@@ -355,7 +183,7 @@ if (window.innerWidth <= 767) {
     onLeaveBack: () => {
       gsap.to(".bottle", {
         opacity: 1,
-        y: -50,
+        y: -50, // Mobile y-position
         duration: 0.8,
         ease: "power2.out",
       });
