@@ -275,8 +275,8 @@ if (window.innerWidth <= 767) {
     scrub: 1,
     onEnter: () => {
       gsap.to(".bottle", {
-        scale: 1.15, // mobile ma thodu ochu
-        y: -220, // mobile screen mate fit
+        scale: 1.5, // mobile ma thodu ochu
+        y: -400, // mobile screen mate fit
         duration: 1,
         ease: "power3.out",
       });
