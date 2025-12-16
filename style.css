@@ -129,9 +129,9 @@ section {
   color: #ff9000;
 }
 
-.nav-links li.active {
+/* .nav-links li.active {
   color: #2c65a7;
-}
+} */
 
 /* Hamburger Icon */
 .menu-toggle {
@@ -294,7 +294,7 @@ section {
 
 /* ========== BENEFITS (Frame 4) ========== */
 .benefits {
-  background: url("assets/Benefits-main-back.png") center/cover no-repeat;
+  background: url("assets/Benefits-main-ph8.png") center/cover no-repeat;
   height: 777px;
   text-align: center;
   color: #fff;
@@ -1857,4 +1857,30 @@ textarea {
     gap: 15px;
     font-size: 0.9rem;
   }
+}
+
+
+
+
+#scrollTopBtn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 45px;
+    height: 45px;
+    background: #0488DA;
+    color: #fff;
+    font-size: 22px;
+    text-align: center;
+    line-height: 45px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    z-index: 9999;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: background 0.3s;
+}
+
+#scrollTopBtn:hover {
+    background: #036bb0;
 }

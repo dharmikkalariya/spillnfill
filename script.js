@@ -560,3 +560,25 @@ document.addEventListener("keydown", function (event) {
     modal.style.display = "none";
   }
 });
+
+
+
+// scrollTopBtn arrow ============== 
+
+window.addEventListener("scroll", function () {
+    const btn = document.getElementById("scrollTopBtn");
+
+    if (window.scrollY > 200) {
+        btn.style.display = "block";
+    } else {
+        btn.style.display = "none";
+    }
+});
+
+document.getElementById("scrollTopBtn").addEventListener("click", function (e) {
+    e.preventDefault();
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+});
